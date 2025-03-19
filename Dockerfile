@@ -1,7 +1,4 @@
-FROM python:3-alpine
-WORKDIR /service
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . ./
-EXPOSE 8880
-ENTRYPOINT ["python3", "app.py"]
+FROM node:alpine
+WORKDIR /app
+COPY index.js .
+ENTRYPOINT ["node", "index.js"]
